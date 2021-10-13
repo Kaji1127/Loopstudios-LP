@@ -1,7 +1,22 @@
 @use '../abstracts' as *;
 .container {
-	padding: 0 2.4rem;
-	margin-bottom: 9.6rem;
+	max-width: 100%;
+	margin: 0 auto 9.6rem;
+	position: relative;
+
+	@include breakpoint(small) {
+		width: 60rem;
+	}
+	@include breakpoint(medium) {
+		width: 72rem;
+	}
+	@include breakpoint(large) {
+		width: 96rem;
+		margin: 0 auto 18.4rem;
+	}
+	@include breakpoint(xlarge) {
+		width: 110rem;
+	}
 }
 
 body {

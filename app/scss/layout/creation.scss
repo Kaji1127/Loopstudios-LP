@@ -1,18 +1,52 @@
 @use '../abstracts' as *;
 
 .creation {
-	display: grid;
+	padding: 0 2.4rem;
+	&__wrapper {
+		display: grid;
+
+		@include breakpoint(large) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
 	&__container {
+		display: grid;
+		row-gap: 2.4rem;
 		margin-top: 4.8rem;
+		margin-bottom: 3.4rem;
+
+		@include breakpoint(medium) {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 3rem;
+			row-gap: 3rem;
+		}
+
+		@include breakpoint(large) {
+			grid-template-columns: repeat(4, 1fr);
+			grid-column: 1 / 3;
+			margin-bottom: 0;
+		}
+	}
+	&__title {
+		justify-self: center;
+
+		@include breakpoint(large) {
+			grid-row: 1 / 2;
+			align-self: center;
+			justify-self: start;
+		}
 	}
 	&__content {
 		display: block;
 		position: relative;
-		margin-bottom: 2.4rem;
 		cursor: pointer;
 
 		&:last-of-type {
-			margin-bottom: 3.4rem;
+			margin-bottom: 0;
+		}
+
+		@include breakpoint(medium) {
+			height: 42rem;
 		}
 
 		&-title {
@@ -20,7 +54,7 @@
 			bottom: 2rem;
 			left: 2rem;
 			color: var(--white);
-			font-family: 'Josefin Sans';
+			font-family: var(--font-josefin);
 			z-index: 10;
 		}
 
@@ -32,15 +66,40 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-image: linear-gradient(
-				to left,
-				hsla(0, 0%, 0%, 0.01),
-				hsla(0%, 0%, 0%, 0.6)
-			);
+			background-image: linear-gradient(to left, hsla(0, 0%, 0%, 0.01), hsla(0, 0%, 0%, 0.6));
+			// background-color: #000;
+			transition: 0.4s;
 			z-index: 9;
 		}
+
+		&:hover {
+			.creation__content {
+				&-title {
+					color: var(--black);
+				}
+			}
+			&::after {
+				background-image: none;
+				background-color: var(--light-white);
+			}
+		}
 	}
+
 	&__img {
+		object-fit: cover;
 		width: 100%;
+		height: 100%;
+	}
+
+	&__button {
+		grid-column: 1 / -1;
+		justify-self: center;
+
+		@include breakpoint(large) {
+			grid-row: 1 / 2;
+			grid-column: 2 / -1;
+			justify-self: end;
+			align-self: center;
+		}
 	}
 }

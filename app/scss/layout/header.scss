@@ -1,7 +1,36 @@
+@use '../abstracts' as *;
 .header {
 	height: 65rem;
+	padding: 0 2.4rem;
+	margin-bottom: 9.6rem;
 	background-image: url(../../../images/mobile/image-hero.jpg);
 	background-size: cover;
 	background-position: center center;
-	position: relative;
+
+	@include breakpoint(medium) {
+		background-image: url(../../../images/desktop/image-hero.jpg);
+	}
+
+	@include breakpoint(large) {
+		margin-bottom: 16rem;
+	}
+
+	&__container {
+		margin: 0 auto;
+		position: relative;
+		height: 100%;
+
+		@include breakpoint(small) {
+			max-width: 60rem;
+		}
+		@include breakpoint(medium) {
+			max-width: 72rem;
+		}
+		@include breakpoint(large) {
+			max-width: 96rem;
+		}
+		@include breakpoint(xlarge) {
+			max-width: 110rem;
+		}
+	}
 }
