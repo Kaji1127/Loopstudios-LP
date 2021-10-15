@@ -1,1 +1,0 @@
-{"version":3,"sources":["script.js"],"names":["navMenu","document","getElementById","navToggle","navClose","addEventListener","classList","add","remove"],"mappings":"AACA,MAAMA,QAAUC,SAASC,eAAe,YAClCC,UAAYF,SAASC,eAAe,cACpCE,SAAWH,SAASC,eAAe,aAErCC,WACHA,UAAUE,iBAAiB,SAAS,KACnCL,QAAQM,UAAUC,IAAI,gBAIpBH,UACHA,SAASC,iBAAiB,SAAS,KAClCL,QAAQM,UAAUE,OAAO","file":"script.js"}
